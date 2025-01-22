@@ -16,3 +16,12 @@
 import flet as ft
 import requests
 
+def main (page: ft.Page):
+    # Creating search field
+    title = ft.Text("Weather API by Max Barros")
+    page.add(title)
+    city_search = ft.TextField(label="Type the city")
+    page.add(city_search)
+
+
+ft.app(target=main)
