@@ -24,4 +24,8 @@ def main (page: ft.Page):
     page.add(city_search)
 
 
+    # Creating search button
+    button = ft.ElevatedButton("Search", on_click="")
+    page.add(button)
+    page.update()
 ft.app(target=main)
