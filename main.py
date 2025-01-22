@@ -41,6 +41,15 @@ def main (page: ft.Page):
             temperature = api_data["main"]["temp"]
             city_name = api_data["name"]
             feels_like = api_data["main"]["feels_like"]
+            
+            # Weather Icon from Weather API
+            icon_url = f"https://openweathermap.org/img/wn/{str(api_data["weather"][0]["icon"])}@2x.png"
+            # Creating the icon
+            img = ft.Image(src=icon_url, 
+                           width=40,
+                           height=40,
+                           fit=ft.ImageFit.CONTAIN)
+            
             # Creating the screen result for the search when found
             search_result = ft.Text(f"The current temperature in {city_name} is {temperature}°C and it feels like {feels_like}°C.", weight=ft.FontWeight.W_600)
             page.add(search_result)
