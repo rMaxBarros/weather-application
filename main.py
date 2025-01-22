@@ -23,6 +23,9 @@ def main (page: ft.Page):
     city_search = ft.TextField(label="Type the city")
     page.add(city_search)
 
+    def search_results(e):
+        city = city_search.value
+
 
     # Creating search button
     button = ft.ElevatedButton("Search", on_click="")
