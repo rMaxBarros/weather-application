@@ -28,7 +28,7 @@ def main (page: ft.Page):
 
 
     # Creating search button
-    button = ft.ElevatedButton("Search", on_click="")
+    button = ft.ElevatedButton("Search", on_click=search_results)
     page.add(button)
     page.update()
 ft.app(target=main)
