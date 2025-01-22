@@ -37,11 +37,18 @@ def main (page: ft.Page):
             search_result = ft.Text(f"The city '{city}' was not found.")
             page.add(search_result)
             page.update()
+        else:
+            temperature = api_data["main"]["temp"]
+            city_name = api_data["name"]
+            # Creating the screen result for the search when found
+            search_result = ft.Text(f"The current temperature in {city_name} is {temperature}°C")
+            page.add(search_result)
+            page.update()
 
 
     # Creating search button
     button = ft.ElevatedButton("Search", on_click=search_results)
     page.add(button)
     page.update()
-    
+
 ft.app(target=main)
