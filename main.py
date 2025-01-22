@@ -50,9 +50,16 @@ def main (page: ft.Page):
                            height=40,
                            fit=ft.ImageFit.CONTAIN)
             
-            # Creating the screen result for the search when found
+            # Creating the text result for the search when found
             search_result = ft.Text(f"The current temperature in {city_name} is {temperature}°C and it feels like {feels_like}°C.", weight=ft.FontWeight.W_600)
-            page.add(search_result)
+            
+            # Add image and text to the page
+            row = ft.Row([
+                img,
+                search_result
+            ])
+            
+            page.add(row)
             city_search.value = ""
             page.update()
 
