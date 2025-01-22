@@ -27,6 +27,8 @@ def main (page: ft.Page):
         city = city_search.value
         api_key = "caf6f0f5d231eadf048ff6d73548951b"
         base_url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+        response = requests.get(base_url)
+        api_data = response.json()
 
 
     # Creating search button
