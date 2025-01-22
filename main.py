@@ -30,9 +30,18 @@ def main (page: ft.Page):
         response = requests.get(base_url)
         api_data = response.json()
 
+        if api_data["cod"] == "200":
+            search_result = "The city was not found"
+
+            # Creating the screen result for the search
+            search_result = ft.Text(f"The city '{city}' was not found.")
+            page.add(search_result)
+            page.update()
+
 
     # Creating search button
     button = ft.ElevatedButton("Search", on_click=search_results)
     page.add(button)
     page.update()
+    
 ft.app(target=main)
