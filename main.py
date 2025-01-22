@@ -34,7 +34,7 @@ def main (page: ft.Page):
             search_result = "The city was not found"
 
             # Creating the screen result for the search
-            search_result = ft.Text(f"The city '{city}' was not found.")
+            search_result = ft.Text(f"The city '{city}' was not found.", weight=ft.FontWeight.W_600)
             page.add(search_result)
             page.update()
         else:
@@ -42,7 +42,7 @@ def main (page: ft.Page):
             city_name = api_data["name"]
             feels_like = api_data["main"]["feels_like"]
             # Creating the screen result for the search when found
-            search_result = ft.Text(f"The current temperature in {city_name} is {temperature}°C and it feels like {feels_like}°C.")
+            search_result = ft.Text(f"The current temperature in {city_name} is {temperature}°C and it feels like {feels_like}°C.", weight=ft.FontWeight.W_600)
             page.add(search_result)
             city_search.value = ""
             page.update()
