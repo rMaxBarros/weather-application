@@ -40,8 +40,9 @@ def main (page: ft.Page):
         else:
             temperature = api_data["main"]["temp"]
             city_name = api_data["name"]
+            feels_like = api_data["main"]["feels_like"]
             # Creating the screen result for the search when found
-            search_result = ft.Text(f"The current temperature in {city_name} is {temperature}°C")
+            search_result = ft.Text(f"The current temperature in {city_name} is {temperature}°C and it feels like {feels_like}°C.")
             page.add(search_result)
             city_search.value = ""
             page.update()
