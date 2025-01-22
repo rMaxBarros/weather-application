@@ -43,6 +43,7 @@ def main (page: ft.Page):
             # Creating the screen result for the search when found
             search_result = ft.Text(f"The current temperature in {city_name} is {temperature}°C")
             page.add(search_result)
+            city_search.value = ""
             page.update()
 
 
